@@ -48,7 +48,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                             let author = articleFromJson["author"] as? String,
                             let desc = articleFromJson["description"] as? String,
                             let url = articleFromJson["url"] as? String,
-                            let image = articleFromJson["image"] as? String{
+                            let image = articleFromJson["urlToImage"] as? String{
                             
                             article.author = author;
                             article.desc = desc
@@ -79,20 +79,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "articleCell", for: indexPath) as! ArticleCell
         
-        cell.title.text = self.articles?[indexPath.item].headline
-        cell.desc.text = self.articles?[indexPath.item].desc
-        cell.author.text = self.articles?[indexPath.item].author
+        let indexNumber = indexPath.item as? Int
+        
+        cell.title.text = self.articles?[indexPath.row].headline
+        cell.desc.text = self.articles?[indexPath.row].desc
+        cell.author.text = self.articles?[indexPath.row].author
         
         return cell
     }
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.articles?.count ?? 0
+        return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.articles?.count ?? 0
     }
     
 }

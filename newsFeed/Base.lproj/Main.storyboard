@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -57,21 +58,23 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffE-po-kWO">
-                                                    <rect key="frame" x="146" y="74" width="213" height="63"/>
+                                                    <rect key="frame" x="146" y="118.5" width="213" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <string key="text">I'm not a fan of educational toys. They're usually either too educational or too toy-like and, in the end, kids get little education and little fun. The Code..</string>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GK9-ga-1sG">
-                                                    <rect key="frame" x="329" y="163" width="38" height="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GK9-ga-1sG">
+                                                    <rect key="frame" x="329" y="152.5" width="38" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="12"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="GK9-ga-1sG" secondAttribute="trailing" constant="8" id="xuL-wr-T50"/>
+                                                <constraint firstItem="GK9-ga-1sG" firstAttribute="trailing" secondItem="w07-pe-qKV" secondAttribute="trailingMargin" constant="8" id="0ZD-9a-XvB"/>
+                                                <constraint firstAttribute="trailing" secondItem="GK9-ga-1sG" secondAttribute="trailing" constant="8" id="GrR-4F-3z4"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="GK9-ga-1sG" secondAttribute="bottom" constant="8" id="JPZ-i1-aBo"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
