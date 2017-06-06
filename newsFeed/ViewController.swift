@@ -8,6 +8,9 @@
 
 import UIKit
 
+import SDWebImage
+
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
     
@@ -84,6 +87,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.title.text = self.articles?[indexPath.row].headline
         cell.desc.text = self.articles?[indexPath.row].desc
         cell.author.text = self.articles?[indexPath.row].author
+        cell.imgView.sd_setImage(with: URL(string: (self.articles?[indexPath.row].image)! ))
         
         return cell
     }
