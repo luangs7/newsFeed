@@ -13,6 +13,7 @@ import SDWebImage
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
+
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,7 +31,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func fetchArticles(){
-        let urlRequest = URLRequest(url: URL(string: "https://newsapi.org/v1/articles?source=techcrunch&sortBy=latest&apiKey=3363d72a9f204baa9b4c256775c88b28")!)
+        let urlRequest = URLRequest(url: URL(string: "https://newsapi.org/v1/articles?source=techcrunch&sortBy=top&apiKey=3363d72a9f204baa9b4c256775c88b28")!)
         
         let task = URLSession.shared.dataTask(with: urlRequest){(data,response,error) in
             if error != nil{
@@ -99,6 +100,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.articles?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let webVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "web") as! WebViewController
+        
+        webVC.url = self.articles?[indexPath.row].url
+        
+        self.present(webVC, animated: true, completion: nil)
+    }
+    
+    
+    let menuManager = MenuManager()
+    @IBAction func menubtn(_ sender: Any) {
+        menuManager.openMenu()
     }
     
 }
