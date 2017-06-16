@@ -18,20 +18,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     
     var articles : [ArticleObject]? = []
-    
+    var source = "techcrunch"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
         
-        fetchArticles();
+        fetchArticles(fromSource: source);
        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    func fetchArticles(){
-        let urlRequest = URLRequest(url: URL(string: "https://newsapi.org/v1/articles?source=techcrunch&sortBy=top&apiKey=3363d72a9f204baa9b4c256775c88b28")!)
+    func fetchArticles(fromSource provider : String){
+        let urlRequest = URLRequest(url: URL(string: "https://newsapi.org/v1/articles?source=\(provider)&sortBy=top&apiKey=3363d72a9f204baa9b4c256775c88b28")!)
         
         let task = URLSession.shared.dataTask(with: urlRequest){(data,response,error) in
             if error != nil{
@@ -114,6 +115,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let menuManager = MenuManager()
     @IBAction func menubtn(_ sender: Any) {
         menuManager.openMenu()
+        menuManager.mainVC = self
     }
     
 }

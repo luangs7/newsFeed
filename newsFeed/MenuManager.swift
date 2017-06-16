@@ -13,7 +13,7 @@ class MenuManager: NSObject, UITableViewDelegate, UITableViewDataSource {
     let blackView = UIView()
     let menuTableView = UITableView()
     let arrayOfSources = ["TechCrunch", "TechRadar"]
-    
+    var mainVC: ViewController?
     
     public func openMenu(){
         if let window = UIApplication.shared.keyWindow{
@@ -29,6 +29,8 @@ class MenuManager: NSObject, UITableViewDelegate, UITableViewDataSource {
             
             
             window.addSubview(blackView)
+            window.addSubview(menuTableView)
+
             
             UIView.animate(withDuration: 0.5, animations:{
                 self.blackView.alpha = 1
@@ -42,6 +44,9 @@ class MenuManager: NSObject, UITableViewDelegate, UITableViewDataSource {
         
         UIView.animate(withDuration: 0.5, animations:{
             self.blackView.alpha = 0
+            if let window = UIApplication.shared.keyWindow{
+                self.menuTableView.frame.origin.y = window.frame.height
+            }
             
         })
     }
@@ -62,6 +67,17 @@ class MenuManager: NSObject, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = mainVC as? ViewController{
+            vc.source = arrayOfSources[indexPath.item].lowercased()
+            vc.fetchArticles(fromSource: arrayOfSources[indexPath.item].lowercased())
+            dismissMenu()
+        }
+    }
     
     override init() {
         super .init()

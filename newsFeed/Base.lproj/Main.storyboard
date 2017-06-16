@@ -151,12 +151,17 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VrZ-Aq-nv4">
+                                <rect key="frame" x="177" y="355.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2AT-eX-Z4k" firstAttribute="top" secondItem="ESU-ET-A51" secondAttribute="bottom" id="6OZ-nH-5BV"/>
                             <constraint firstItem="FDS-zw-Wi0" firstAttribute="top" secondItem="IG3-7h-pOT" secondAttribute="bottom" id="EKZ-Zx-7Ek"/>
+                            <constraint firstItem="VrZ-Aq-nv4" firstAttribute="centerX" secondItem="ESU-ET-A51" secondAttribute="centerX" id="EMi-s7-D8w"/>
                             <constraint firstAttribute="trailing" secondItem="FDS-zw-Wi0" secondAttribute="trailing" id="Hhf-GD-6G9"/>
+                            <constraint firstItem="VrZ-Aq-nv4" firstAttribute="centerY" secondItem="ESU-ET-A51" secondAttribute="centerY" id="KRf-Nx-w67"/>
                             <constraint firstItem="ESU-ET-A51" firstAttribute="top" secondItem="FDS-zw-Wi0" secondAttribute="bottom" id="M6K-OG-Ozr"/>
                             <constraint firstAttribute="trailing" secondItem="ESU-ET-A51" secondAttribute="trailing" id="W8m-HE-RfW"/>
                             <constraint firstItem="FDS-zw-Wi0" firstAttribute="leading" secondItem="RUB-tV-Bsx" secondAttribute="leading" id="d4Y-hD-AkF"/>
@@ -169,6 +174,7 @@
                     </view>
                     <connections>
                         <outlet property="back" destination="Y9U-HZ-YrO" id="AbE-1e-NfP"/>
+                        <outlet property="progress" destination="VrZ-Aq-nv4" id="6TV-VQ-k2Q"/>
                         <outlet property="webView" destination="ESU-ET-A51" id="s4y-6e-scE"/>
                     </connections>
                 </viewController>
