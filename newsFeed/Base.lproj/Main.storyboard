@@ -116,6 +116,84 @@
             </objects>
             <point key="canvasLocation" x="135.19999999999999" y="85.007496251874073"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="q9l-1T-zzE">
+            <objects>
+                <tabBarController id="ljX-iy-VhF" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="dbh-iX-itK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="VyN-51-qFt" kind="relationship" relationship="viewControllers" id="Y5F-30-53d"/>
+                        <segue destination="k4s-GE-LqA" kind="relationship" relationship="viewControllers" id="VO4-gS-3Hr"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="26U-2G-0CJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="832"/>
+        </scene>
+        <!--One-->
+        <scene sceneID="3G6-fV-pFO">
+            <objects>
+                <viewController id="VyN-51-qFt" customClass="FirstViewController" customModule="newsFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Gr-wC-UQR"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Ks-A4-mph"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nRY-N6-X4e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FIRST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rrv-vp-hma">
+                                <rect key="frame" x="166" y="323" width="46" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="One" image="Tab1Deselected" selectedImage="Tab1" id="0B4-av-p4h"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Itx-tJ-zrd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1078" y="832"/>
+        </scene>
+        <!--Two-->
+        <scene sceneID="g7E-gv-xTF">
+            <objects>
+                <viewController id="k4s-GE-LqA" customClass="SecondViewController" customModule="newsFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="47p-wl-ieH"/>
+                        <viewControllerLayoutGuide type="bottom" id="I7c-wM-58J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5hS-aa-pQn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SECOND" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbp-vS-mna">
+                                <rect key="frame" x="166" y="323" width="69" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Two" image="Tab2Deselected" selectedImage="Tab2" id="5No-FE-Ggz"/>
+                    <connections>
+                        <outlet property="label" destination="Hbp-vS-mna" id="chg-8F-CYf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wUF-EL-qud" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1078" y="1487"/>
+        </scene>
         <!--Web View Controller-->
         <scene sceneID="mU5-51-ygu">
             <objects>
@@ -183,4 +261,11 @@
             <point key="canvasLocation" x="1096.8" y="84.107946026986511"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Tab1" width="28" height="28"/>
+        <image name="Tab1Deselected" width="28" height="28"/>
+        <image name="Tab2" width="13" height="27"/>
+        <image name="Tab2Deselected" width="13" height="27"/>
+    </resources>
+    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>
